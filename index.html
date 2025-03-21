@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Guide to Edit APK Files</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --accent-color: #4CAF50;
+            --code-bg: #2d2d2d;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--accent-color);
+        }
+
+        a {
+            color: #64B5F6;
+            text-decoration: none;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .screenshot-placeholder {
+            width: 80%;
+            height: 400px;
+            background: #333;
+            border: 2px dashed #666;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* Prevents content from leaking out */
+        }
+
+        .screenshot-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Maintains aspect ratio without stretching */
+            width: auto;
+            height: auto;
+        }
+
+        .note {
+            background: #2b2b2b;
+            padding: 15px;
+            border-left: 4px solid var(--accent-color);
+            margin: 20px 0;
+        }
+
+        .step-number {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            background: #212121;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Complete Guide to Editing APK Files</h1>
+
+    <div class="section">
+        <h2>Introduction</h2>
+        <p>This comprehensive guide will walk you through modifying key elements of Android APK files using APK Editor
+            Studio. You'll learn how to:</p>
+        <ul>
+            <li>Change application name</li>
+            <li>Modify application icon</li>
+            <li>Edit package identifier</li>
+            <li>Update important strings in strings.xml</li>
+        </ul>
+        <p>We'll focus on Windows and Linux platforms, with Android instructions coming in a future update.</p>
+        <div class="note">Note: Download Example App from <a href="Example_App.apk">Here</a></div>
+    </div>
+
+    <div class="section">
+        <h2>Installation Guide</h2>
+
+        <h3>Windows Installation</h3>
+        <div class="screenshot-placeholder"><img src="screenshot/win-install.png"></div>
+        <ol>
+            <li>Visit <a href="https://qwertycube.com/apk-editor-studio/download/" target="_blank">official download
+                    page</a></li>
+            <li>Download the Windows executable (.exe) file</li>
+            <li>Run the installer and follow on-screen instructions</li>
+            <li>Launch APK Editor Studio from Start Menu</li>
+        </ol>
+
+        <h3>Linux Installation</h3>
+        <div class="screenshot-placeholder"><img src="screenshot/lin-install.png"></div>
+        <ol>
+            <li>Download the .AppImage file from the official website</li>
+            <li>Open Terminal in the download directory</li>
+            <li>Make the file executable:
+                <code>chmod +x APK-Editor-Studio*.AppImage</code>
+            </li>
+            <li>Launch using:
+                <code>./APK-Editor-Studio*.AppImage</code>
+            </li>
+        </ol>
+        <div class="note">Note: Some Linux distributions may require installing <code>fuse</code> libraries for AppImage
+            support</div>
+    </div>
+
+    <div class="section">
+        <h2>Editing APK Files</h2>
+
+        <h3>Initial Setup</h3>
+        <div class="screenshot-placeholder"><img src="screenshot/iface-main.png"></div>
+        <ol>
+            <li>Launch APK Editor Studio</li>
+            <li>Click "Open APK" from Project Manager</li>
+            <li>Select your target APK file</li>
+            <li>Wait for automatic decompilation</li>
+        </ol>
+
+        <h3>Modifying App Name</h3>
+        <div class="screenshot-placeholder"><img src="screenshot/app-title.png"></div>
+        <ol>
+            <li>In Project Manager panel, click "Application Title"</li>
+            <li>Enter new name in the text field</li>
+            <li>Press Enter to confirm changes</li>
+            <li>Press <code>Ctrl + S</code> to Save changes</li>
+        </ol>
+
+        <h3>Changing Application Icon</h3>
+        <div class="screenshot-placeholder"><img src="screenshot/app-icon.png"></div>
+        <ol>
+            <li>Click "Application Icon" in Project Manager</li>
+            <li>Choose "Import New Icon"</li>
+            <li>Select PNG file (recommended 512x512px)</li>
+            <li>Confirm replacement in dialog</li>
+        </ol>
+
+        <h3>Updating Package ID</h3>
+        <div class="screenshot-placeholder"><img src="screenshot/app-pkg-2.png"></div>
+        <ol>
+            <li>In File Explorer (bottom-left), double-click AndroidManifest.xml</li>
+            <li>Locate <code>package="..."</code> attribute</li>
+            <li>Edit using reverse domain format (com.example.newapp)</li>
+            <li>Save changes (Ctrl+S)</li>
+        </ol>
+
+        <h3>Editing Strings.xml</h3>
+        <div class="screenshot-placeholder"><img src="screenshot/app-res.png"></div>
+        <ol>
+            <li>In File Explorer, expand <code>res</code> directory</li>
+            <div class="screenshot-placeholder"><img src="screenshot/app-strings.png"></div>
+            <li>Navigate to <code>values</code> > <code>strings.xml</code></li>
+            <div class="screenshot-placeholder"><img src="screenshot/app-string-client.png"></div>
+            <li>Find <code>client_name</code> string and modify</li>
+            <div class="screenshot-placeholder"><img src="screenshot/app-string-web.png"></div>
+            <li>Scroll to <code>web</code> string and update URL</li>
+            <li>Save changes (Ctrl+S)</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Finalizing Changes</h2>
+        <div class="screenshot-placeholder"><img src="screenshot/app-save.png"></div>
+        <ol>
+            <li>Click "Save APK" in Project Manager</li>
+            <li>Choose output location</li>
+            <li>Wait for packaging and signing (5-15 minutes)</li>
+            <li>Test modified APK on device or emulator</li>
+        </ol>
+        <div class="note">Important: Always test modified APKs thoroughly before distribution</div>
+    </div>
+
+    <div class="section">
+        <h2>Editing on Android</h2>
+        <p>Coming Soon</p>
+    </div>
+
+    <div class="section">
+        <h2>Conclusion</h2>
+        <p>You've now learned essential APK modification techniques using APK Editor Studio. Remember that:</p>
+        <ul>
+            <li>Package IDs must be unique for Play Store submissions</li>
+            <li>Icons should follow Material Design guidelines</li>
+            <li>Always maintain XML formatting when editing files</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>
